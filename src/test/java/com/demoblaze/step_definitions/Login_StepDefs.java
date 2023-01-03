@@ -35,4 +35,10 @@ public class Login_StepDefs {
     public void theUserEntersWithValidUsernameUndPassword(Map<String,String>userInfo ) {
         loginPage.loginWithParameters_Mtd(userInfo.get("username"),userInfo.get("password"));
     }
+
+    @Then("verify invalid credential {string}")
+    public void verifyInvalidCredential(String expectedMessage) {
+        loginPage.verifyWithPopUpMessage_Mtd(expectedMessage);
+
+    }
 }
